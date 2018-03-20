@@ -37,6 +37,29 @@
 				<f:facet name="header">Arrival Time</f:facet>
 				<h:outputText value="#{flight.arrivalTime}" /> 
 			</h:column>
+			<h:column>
+				<f:facet name="header">Origin Airport</f:facet>
+				<h:outputText value="#{flight.origin}">
+					<f:converter converterId="airportConverter"></f:converter>
+				</h:outputText> 
+			</h:column>
+			<h:column>
+				<f:facet name="header">Destination Airport</f:facet>
+				<h:outputText value="#{flight.destination}">
+					<f:converter converterId="airportConverter"></f:converter>
+				</h:outputText> 
+			</h:column>
+			<h:column>
+				<f:facet name="header">Airplaine Model</f:facet>
+				<h:outputText value="#{flight.airplane.model}">
+				</h:outputText> 
+			</h:column>
+			<h:column>
+				<f:facet name="header">Airplaine Capacity</f:facet>
+				<h:outputText value="#{flight.airplane.capacity}">
+				</h:outputText> 
+			</h:column>
+			
 		</h:dataTable>
 	</h:form>
 </h:body>
