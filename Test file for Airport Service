@@ -1,0 +1,36 @@
+Test file for Airport Service
+1. Create
+url: http://localhost:8080/airlinesWebApp/rs/airport/create
+method: post
+input:
+{
+	"airportcode": "Airport Code",
+	"city": "City",
+	"country": "Country",
+	"name": "Airport Name"
+}
+output: void
+
+
+2. Delete
+url: http://localhost:8080/airlinesWebApp/rs/airport/delete
+method: post
+input:
+ { 
+ 	"id": 1101 
+ }
+output: void
+
+
+3. Update
+url: http://localhost:8080/airlinesWebApp/rs/airport/update
+method: post
+input:
+{
+	"airportcode": "Airport Code",
+	"city": "City",
+	"country": "Country",
+	"name": "Airport Name"
+}
+output: void
+

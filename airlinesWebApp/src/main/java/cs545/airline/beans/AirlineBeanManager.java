@@ -51,8 +51,13 @@ public class AirlineBeanManager implements Serializable {
 		airline = new Airline();
 		airline.setId(id);
 		airline = airlineService.find(airline);
-		airlineService.delete(airline);
-		return "delete";
+		if(airline.getFlights().isEmpty()) {
+			airlineService.delete(airline);
+			return "delete";
+		}
+		return "airlineList";
+		
+		
 	}
 	
 	public String createForm() {
