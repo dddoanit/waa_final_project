@@ -37,7 +37,7 @@ public class FlightRest {
 	
 	@Path("findByNumber")
 	@GET
-	public List<Flight> findByNumber(String flightnr) {
+	public List<Flight> findByNumber(@QueryParam("flightnr") String flightnr) {
 		return flightService.findByNumber(flightnr);
 	}
 
