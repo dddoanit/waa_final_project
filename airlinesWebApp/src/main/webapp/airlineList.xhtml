@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>List of Airlines</title>
+</h:head>
+<h:body>
+	<h1>List of Airlines</h1>
+	<h:link value="Add Airline" action="#{airlineBeanManager.createForm()}"></h:link>
+	<h:form>
+		<h:dataTable value="#{airlineBeanManager.airlines}" var="airline">
+			<h:column>
+				<f:facet name="header">Airline</f:facet>
+				<h:outputText value="#{airline.name}" /> 
+			</h:column>
+			<h:column>
+
+                <f:facet name="header">Edit</f:facet>
+                <h:commandButton action="#{airlineBeanManager.editAirline(airline.id)}" value="Edit"/>
+            </h:column>
+
+            <h:column>
+
+                <f:facet name="header">Delete</f:facet>
+
+                <h:commandButton action="#{airlineBeanManager.deleteAirline(airline.id)}" value="Delete"/>
+
+            </h:column>
+
+			
+		</h:dataTable>
+	</h:form>
+</h:body>
+</html>

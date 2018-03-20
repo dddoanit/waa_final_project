@@ -9,12 +9,10 @@
 	<title>Create Airline</title>
 </h:head>
 <h:body>
+<h2>Airline detail</h2>
 	<h:form>
-		<h:inputText value="#{airlineManagementBean.name}" required="true"/>
-		
-		<h:commandButton value="Create" action="#{airlineManagementBean.create}"/>
-
+		<h:inputText value="#{airlineBeanManager.name}" required="true"/>		
+		<h:commandButton value="Save" action="#{airlineBeanManager.create}"/>
 	</h:form>
-
 </h:body>
 </html>

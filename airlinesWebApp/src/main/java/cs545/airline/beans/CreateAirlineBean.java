@@ -8,9 +8,9 @@ import cs545.airline.model.Airline;
 import cs545.airline.service.AirlineService;
 import java.io.Serializable;
 
-@Named("airlineManagementBean")
+@Named("createAirlineBean")
 @SessionScoped
-public class AirlineManagementBean implements Serializable {
+public class CreateAirlineBean implements Serializable {
 	
 	/**
 	 * 
@@ -22,6 +22,7 @@ public class AirlineManagementBean implements Serializable {
 	
 	private Airline airline;
 	
+	
 	private String name;
 
 	
@@ -29,7 +30,7 @@ public class AirlineManagementBean implements Serializable {
 		airline = new Airline();
 		airline.setName(name);
 		this.airlineService.create(airline);
-		return "success";
+		return "airlineList";
 	}
 
 	public Airline getAirline() {
