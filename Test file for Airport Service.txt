@@ -1,0 +1,228 @@
+Test file for Airport Service
+1. Create
+url: http://localhost:8080/airlinesWebApp/rs/airport/create
+method: post
+input:
+{
+	"airportcode": "Airport Code",
+	"city": "City",
+	"country": "Country",
+	"name": "Airport Name"
+}
+output: void
+
+
+2. Delete
+url: http://localhost:8080/airlinesWebApp/rs/airport/delete
+method: post
+input:
+ { 
+ 	"id": 1101 
+ }
+output: void
+
+
+3. Update
+url: http://localhost:8080/airlinesWebApp/rs/airport/update
+method: post
+input:
+{
+	"airportcode": "Airport Code",
+	"city": "City",
+	"country": "Country",
+	"name": "Airport Name"
+}
+output: void
+
+4. find
+url: http://localhost:8080/airlinesWebApp/rs/airport/find
+method: post
+input:{ 
+ 	"id": 8
+ 	 }
+output:{
+    "airportcode": "NRT",
+    "city": "Tokyo",
+    "country": "Japan",
+    "id": 8,
+    "name": "Narita International Airport"
+}
+
+5. findByCode
+url: http://localhost:8080/airlinesWebApp/rs/airport/findByCode?airportcode=SYD
+method: GET
+input:NONE
+output:{
+    "airportcode": "SYD",
+    "city": "Sydney",
+    "country": "Australia",
+    "id": 12,
+    "name": "Kingsford Smith"
+}
+
+6. findByArrival
+url: http://localhost:8080/airlinesWebApp/rs/airport/findByArrival
+method: POST
+input:{ 
+ 	"id": 21
+ 	 }
+output:[
+    {
+        "airportcode": "LHR",
+        "city": "London",
+        "country": "UK",
+        "id": 23,
+        "name": "London Heathrow"
+    }
+]
+7. findByDeparture
+url: http://localhost:8080/airlinesWebApp/rs/airport/findByDeparture
+method: POST
+input:{ 
+ 	"id": 26
+ 	 }
+output:[
+    {
+        "airportcode": "LAX",
+        "city": "Los Angeles",
+        "country": "USA",
+        "id": 13,
+        "name": "Los Angeles International"
+    }
+]
+8.findByCity
+url: http://localhost:8080/airlinesWebApp/rs/airport/findByCity?city=London
+method: GET
+input:none
+output:[
+    {
+        "airportcode": "LHR",
+        "city": "London",
+        "country": "UK",
+        "id": 23,
+        "name": "London Heathrow"
+    }
+]
+9.findByCountry
+url: http://localhost:8080/airlinesWebApp/rs/airport/findByCountry?country=Germany
+method: GET
+input:none
+output:[
+    {
+        "airportcode": "FRA",
+        "city": "Frankfurt",
+        "country": "Germany",
+        "id": 19,
+        "name": "Frankfurt International Airport"
+    },
+    {
+        "airportcode": "FRA-TESTING",
+        "city": "Frankfurt",
+        "country": "Germany",
+        "id": 1951,
+        "name": "Frankfurt International Airport"
+    }
+]
+10.findByName
+url: http://localhost:8080/airlinesWebApp/rs/airport/findByName?name=Frankfurt International Airport
+method: GET
+input:none
+output:[
+    {
+        "airportcode": "FRA",
+        "city": "Frankfurt",
+        "country": "Germany",
+        "id": 19,
+        "name": "Frankfurt International Airport"
+    },
+    {
+        "airportcode": "FRA-TESTING",
+        "city": "Frankfurt",
+        "country": "Germany",
+        "id": 1951,
+        "name": "Frankfurt International Airport"
+    }
+]
+11. findall
+url:http://localhost:8080/airlinesWebApp/rs/airport/findall 
+method: GET
+input:none
+output::[
+    {
+        "airportcode": "AMS",
+        "city": "Amsterdam",
+        "country": "The Netherlands",
+        "id": 4,
+        "name": "Schiphol"
+    },
+    {
+        "airportcode": "DTW",
+        "city": "Detroid",
+        "country": "USA",
+        "id": 5,
+        "name": "Detroid City"
+    },
+    {
+        "airportcode": "NRT",
+        "city": "Tokyo",
+        "country": "Japan",
+        "id": 8,
+        "name": "Narita International Airport"
+    },
+    {
+        "airportcode": "SYD",
+        "city": "Sydney",
+        "country": "Australia",
+        "id": 12,
+        "name": "Kingsford Smith"
+    },
+    {
+        "airportcode": "LAX",
+        "city": "Los Angeles",
+        "country": "USA",
+        "id": 13,
+        "name": "Los Angeles International"
+    },
+    {
+        "airportcode": "FRA",
+        "city": "Frankfurt",
+        "country": "Germany",
+        "id": 19,
+        "name": "Frankfurt International Airport"
+    },
+    {
+        "airportcode": "ORD",
+        "city": "Chicago",
+        "country": "USA",
+        "id": 20,
+        "name": "Chicago O'hare International"
+    },
+    {
+        "airportcode": "LHR",
+        "city": "London",
+        "country": "UK",
+        "id": 23,
+        "name": "London Heathrow"
+    },
+    {
+        "airportcode": "JFK",
+        "city": "New York",
+        "country": "USA",
+        "id": 27,
+        "name": "John F. Kennedy International"
+    },
+    {
+        "airportcode": "SIN",
+        "city": "Singapore",
+        "country": "Singapore",
+        "id": 29,
+        "name": "Changi Airport"
+    },
+    {
+        "airportcode": "FRA-TESTING",
+        "city": "Frankfurt",
+        "country": "Germany",
+        "id": 1951,
+        "name": "Frankfurt International Airport"
+    }
+]
