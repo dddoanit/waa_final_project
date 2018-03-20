@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Web Service</title>
-</head>
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-<body>
-The Server is up!
-
-Rest Services are at
-/rs/hello
-/rs/hello/airline
-
-</body>
-
+<h:head>
+	<title>Airlines</title>
+</h:head>
+<h:body>
+	<h1>Airlines</h1>
+	<h:form>
+		<h:panelGrid>
+			<h:link value="List Flights" outcome="flightList"></h:link>
+			<h:link value="List all accounts" outcome="list"></h:link>
+		</h:panelGrid>
+	</h:form>
+</h:body>
 </html>
