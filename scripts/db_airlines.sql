@@ -1,0 +1,168 @@
+-- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
+--
+-- Host: 35.185.67.251    Database: db_airlines
+-- ------------------------------------------------------
+-- Server version	5.5.5-10.1.26-MariaDB-0+deb9u1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `AIRLINE`
+--
+
+DROP TABLE IF EXISTS `AIRLINE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `AIRLINE` (
+  `ID` bigint(20) NOT NULL,
+  `NAME` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `AIRLINE`
+--
+
+LOCK TABLES `AIRLINE` WRITE;
+/*!40000 ALTER TABLE `AIRLINE` DISABLE KEYS */;
+INSERT INTO `AIRLINE` VALUES (2,'SkyTeam'),(10,'oneworld'),(17,'North Star');
+/*!40000 ALTER TABLE `AIRLINE` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `AIRPLANE`
+--
+
+DROP TABLE IF EXISTS `AIRPLANE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `AIRPLANE` (
+  `ID` bigint(20) NOT NULL,
+  `CAPACITY` int(11) DEFAULT NULL,
+  `MODEL` varchar(255) DEFAULT NULL,
+  `SERIALNR` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `AIRPLANE`
+--
+
+LOCK TABLES `AIRPLANE` WRITE;
+/*!40000 ALTER TABLE `AIRPLANE` DISABLE KEYS */;
+INSERT INTO `AIRPLANE` VALUES (3,519,'A380','12345'),(7,416,'747','54321'),(11,519,'A380','23451'),(15,416,'747','43215'),(18,519,'A380','34512'),(22,416,'747','32154');
+/*!40000 ALTER TABLE `AIRPLANE` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `AIRPORT`
+--
+
+DROP TABLE IF EXISTS `AIRPORT`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `AIRPORT` (
+  `ID` bigint(20) NOT NULL,
+  `AIRPORTCODE` varchar(255) DEFAULT NULL,
+  `CITY` varchar(255) DEFAULT NULL,
+  `COUNTRY` varchar(255) DEFAULT NULL,
+  `NAME` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `AIRPORT`
+--
+
+LOCK TABLES `AIRPORT` WRITE;
+/*!40000 ALTER TABLE `AIRPORT` DISABLE KEYS */;
+INSERT INTO `AIRPORT` VALUES (4,'AMS','Amsterdam','The Netherlands','Schiphol'),(5,'DTW','Detroid','USA','Detroid City'),(8,'NRT','Tokyo','Japan','Narita International Airport'),(12,'SYD','Sydney','Australia','Kingsford Smith'),(13,'LAX','Los Angeles','USA','Los Angeles International'),(19,'FRA','Frankfurt','Germany','Frankfurt International Airport'),(20,'ORD','Chicago','USA','Chicago O\'hare International'),(23,'LHR','London','UK','London Heathrow'),(27,'JFK','New York','USA','John F. Kennedy International'),(29,'SIN','Singapore','Singapore','Changi Airport');
+/*!40000 ALTER TABLE `AIRPORT` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `FLIGHT`
+--
+
+DROP TABLE IF EXISTS `FLIGHT`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `FLIGHT` (
+  `ID` bigint(20) NOT NULL,
+  `ARRIVALDATE` date DEFAULT NULL,
+  `ARRIVALTIME` time DEFAULT NULL,
+  `DEPARTUREDATE` date DEFAULT NULL,
+  `DEPARTURETIME` time DEFAULT NULL,
+  `FLIGHTNR` varchar(255) DEFAULT NULL,
+  `AIRLINE_ID` bigint(20) DEFAULT NULL,
+  `AIRPLANE_ID` bigint(20) DEFAULT NULL,
+  `DESTINATION_ID` bigint(20) DEFAULT NULL,
+  `ORIGIN_ID` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `FK_FLIGHT_AIRPLANE_ID` (`AIRPLANE_ID`),
+  KEY `FK_FLIGHT_AIRLINE_ID` (`AIRLINE_ID`),
+  KEY `FK_FLIGHT_ORIGIN_ID` (`ORIGIN_ID`),
+  KEY `FK_FLIGHT_DESTINATION_ID` (`DESTINATION_ID`),
+  CONSTRAINT `FK_FLIGHT_AIRLINE_ID` FOREIGN KEY (`AIRLINE_ID`) REFERENCES `AIRLINE` (`ID`),
+  CONSTRAINT `FK_FLIGHT_AIRPLANE_ID` FOREIGN KEY (`AIRPLANE_ID`) REFERENCES `AIRPLANE` (`ID`),
+  CONSTRAINT `FK_FLIGHT_DESTINATION_ID` FOREIGN KEY (`DESTINATION_ID`) REFERENCES `AIRPORT` (`ID`),
+  CONSTRAINT `FK_FLIGHT_ORIGIN_ID` FOREIGN KEY (`ORIGIN_ID`) REFERENCES `AIRPORT` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `FLIGHT`
+--
+
+LOCK TABLES `FLIGHT` WRITE;
+/*!40000 ALTER TABLE `FLIGHT` DISABLE KEYS */;
+INSERT INTO `FLIGHT` VALUES (1,'2015-06-25','09:00:00','2009-08-06','19:10:00','NW 36',2,3,4,5),(6,'2015-06-25','13:45:00','2009-08-06','15:05:00','NW 96',2,7,5,8),(9,'2015-06-25','06:15:00','2009-08-05','22:30:00','QF 12',10,11,12,13),(14,'2015-06-25','06:55:00','2009-08-06','21:55:00','QF 21',10,15,8,12),(16,'2015-06-25','05:45:00','2009-08-06','14:30:00','UA 944',17,18,19,20),(21,'2015-06-25','07:30:00','2009-08-06','12:59:00','UA 934',17,22,23,13),(24,'2015-06-25','07:40:00','2015-06-25','07:15:00','NW 8445',2,3,23,4),(25,'2015-06-25','12:21:00','2015-06-25','12:05:00','NW 1689',2,7,20,5),(26,'2015-06-25','23:39:00','2015-06-25','15:00:00','QF 3101',10,11,27,13),(28,'2015-06-25','17:15:00','2015-06-25','11:05:00','QF 4022',10,15,29,8),(30,'2015-06-25','14:53:00','2015-06-25','12:45:00','UA 941',17,18,20,19),(31,'2015-06-25','10:38:00','2015-06-25','08:10:00','UA 4842',17,22,4,23),(32,'2009-08-07','10:38:00','2009-08-07','08:10:00','UA 4842',17,22,4,23);
+/*!40000 ALTER TABLE `FLIGHT` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `SEQUENCE`
+--
+
+DROP TABLE IF EXISTS `SEQUENCE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `SEQUENCE` (
+  `SEQ_NAME` varchar(50) NOT NULL,
+  `SEQ_COUNT` decimal(38,0) DEFAULT NULL,
+  PRIMARY KEY (`SEQ_NAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `SEQUENCE`
+--
+
+LOCK TABLES `SEQUENCE` WRITE;
+/*!40000 ALTER TABLE `SEQUENCE` DISABLE KEYS */;
+INSERT INTO `SEQUENCE` VALUES ('SEQ_GEN',1000);
+/*!40000 ALTER TABLE `SEQUENCE` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-03-20  1:29:13
