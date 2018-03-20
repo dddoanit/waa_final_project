@@ -1,0 +1,98 @@
+Test file for Airline Service
+1.Create
+url: http://localhost:8080/airlinesWebApp/rs/airline/create
+input:
+{
+	"name":"EritreanAirline"
+}
+output: void
+
+2.delete:
+url: http://localhost:8080/airlinesWebApp/rs/airline/delete
+input: {
+             "id": 1051
+    }
+output: void
+
+3.update:
+url: http://localhost:8080/airlinesWebApp/rs/airline/update
+input: 
+{
+        "id": 17,
+        "name": "North Star"
+    },
+
+output: Airline
+{
+        "id": 17,
+        "name": "united"
+    }
+4.find:
+url: http://localhost:8080/airlinesWebApp/rs/airline/find
+input: {
+       
+        "id": 1001
+    }
+Output
+{
+    "id": 1001,
+    "name": "SkyTeam - Testing"
+}
+
+
+5. findByName
+url: http://localhost:8080/airlinesWebApp/rs/airline/findByName?name=oneworld
+input: name=oneworld
+
+    output:
+{
+    "id": 10,
+    "name": "oneworld"
+}
+
+
+
+
+
+
+6.: findByFlight
+url: http://localhost:8080/airlinesWebApp/rs/airline/findByFlightfind
+input: {
+        "id": 1
+        
+    }
+output: [
+    {
+        "id": 2,
+        "name": "SkyTeam"
+    }
+]
+
+
+7.findAll:
+url: http://localhost:8080/airlinesWebApp/rs/airline/findAll
+input: none
+output:
+[
+    {
+        "id": 2,
+        "name": "SkyTeam"
+    },
+    {
+        "id": 10,
+        "name": "oneworld"
+    },
+    {
+        "id": 17,
+        "name": "North Star"
+    },
+    {
+        "id": 1001,
+        "name": "SkyTeam - Testing"
+    },
+    {
+        "id": 1051,
+        "name": "EritreanAirline"
+    }
+]
+
