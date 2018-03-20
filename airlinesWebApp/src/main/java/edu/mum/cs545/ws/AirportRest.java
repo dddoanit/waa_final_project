@@ -1,6 +1,5 @@
 package edu.mum.cs545.ws;
 
-import java.net.HttpURLConnection;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -9,12 +8,11 @@ import javax.inject.Named;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.GenericEntity;
-import javax.ws.rs.core.Response;
+import javax.ws.rs.QueryParam;
+
 import cs545.airline.model.Airport;
+import cs545.airline.model.Flight;
 import cs545.airline.service.AirportService;
 
 @Named
@@ -23,15 +21,29 @@ public class AirportRest {
 	@Inject
 	private AirportService airportService;
 
-	// Get all list of airports
-	@GET
-	@Path("/findall")
-	public List<Airport> findAll() {
-		return airportService.findAll();
-
+	// Create a new port
+	@POST
+	@Path("/create")
+	public Airport create(Airport airport) {
+		airportService.create(airport);
+		return airport;
 	}
 
-	// Get airport by id
+	// Delete airport
+	@POST
+	@Path("/delete")
+	public void delete(Airport airport) {
+		airportService.delete(airport);
+	}
+
+	// update airport
+	@POST
+	@Path("/update")
+	public Airport update(Airport airport) {
+		return airportService.update(airport);
+	}
+
+	// Find
 	@POST
 	@Path("/find")
 	public Airport find(Airport airport) {
@@ -39,47 +51,55 @@ public class AirportRest {
 
 	}
 
-	// Get airport by name
+	// Get airport by code
 	@GET
-	@Path("/name/{name}")
-	public Response getAirportbyName(@PathParam("name") String name) {
-		if (name == null) {
-			throw new WebApplicationException(
-					Response.status(HttpURLConnection.HTTP_BAD_REQUEST).entity("Name is required.").build());
-		}
-		List<Airport> airports = airportService.findByName(name);
-		if (!airports.isEmpty()) {
-			GenericEntity<List<Airport>> airportWrapper = new GenericEntity<List<Airport>>(airports) {
-			};
-			return Response.ok(airportWrapper).build();
-		} else {
-			return Response.noContent().build();
-		}
+	@Path("/findByCode")
+	public Airport findByCode(@QueryParam("airportcode") String airportcode) {
+		return airportService.findByCode(airportcode);
 	}
 
-	// Get airport by city
-	@GET
-	@Path("/city/{city}")
-	public Response getAirportbyCity(@PathParam("city") String city) {
-		if (city == null) {
-			throw new WebApplicationException(
-					Response.status(HttpURLConnection.HTTP_BAD_REQUEST).entity("City is required.").build());
-		}
-		List<Airport> airports = airportService.findByCity(city);
-		if (!airports.isEmpty()) {
-			GenericEntity<List<Airport>> airportWrapper = new GenericEntity<List<Airport>>(airports) {
-			};
-			return Response.ok(airportWrapper).build();
-		} else {
-			return Response.noContent().build();
-		}
-	}
-
-	// Create a new port
+	// Get all list of airports by arrival flight
 	@POST
-	public Response saveAirport(final Airport airport) {
-		airportService.create(airport);
-		return Response.ok(airport).build();
+	@Path("/findByArrival")
+	public List<Airport> findByArrival(Flight flight) {
+		return airportService.findByArrival(flight);
+
 	}
 
+	// Get all list of airports by departure flight
+	@POST
+	@Path("/findByDeparture")
+	public List<Airport> findByDeparture(Flight flight) {
+		return airportService.findByDeparture(flight);
+
+	}
+	
+	// Get list of airports by city
+	@GET
+	@Path("/findByCity")
+	public List<Airport> findByCity(@QueryParam("city") String city) {
+		return airportService.findByCity(city);
+	}
+
+	// Get list of airports by country
+	@GET
+	@Path("/findByCountry")
+	public List<Airport> findByCountry(@QueryParam("country") String country) {
+		return airportService.findByCountry(country);
+	}
+
+	// Get list of airport by name
+	@GET
+	@Path("/findByName")
+	public List<Airport> findByName(@QueryParam("name") String name) {
+		return airportService.findByName(name);
+	}
+
+	// Get list of airports
+	@GET
+	@Path("/findall")
+	public List<Airport> findAll() {
+		return airportService.findAll();
+
+	}
 }
