@@ -1,14 +1,13 @@
 package cs545.airline.beans;
 
-//import javax.enterprise.context.SessionScoped;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import cs545.airline.model.Airline;
 import cs545.airline.service.AirlineService;
 
-@Named
+@Named("airlineManagementBean")
 @SessionScoped
 public class AirlineManagementBean {
 	
@@ -17,7 +16,6 @@ public class AirlineManagementBean {
 	
 	private Airline airline;
 
-	public AirlineManagementBean() {}
 	
 	public String create() {
 		this.airlineService.create(airline);
