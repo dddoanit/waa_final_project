@@ -8,9 +8,11 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import cs545.airline.model.Airline;
 import cs545.airline.model.Airplane;
 import cs545.airline.model.Airport;
 import cs545.airline.model.Flight;
+import cs545.airline.service.AirlineService;
 import cs545.airline.service.AirplaneService;
 import cs545.airline.service.AirportService;
 import cs545.airline.service.FlightService;
@@ -39,12 +41,15 @@ public class ListFlightBean implements Serializable {
 	@Inject
 	private AirportService airportService;
 	
+	@Inject
+	private AirlineService airlineService;
+	
 	public List<Flight> getFlights() {
 		return flightService.findAll();
 	}
 	
-	public List<Airplane> getAirplanes() {
-		return airplaneService.findAll();
+	public List<Airline> getAirlines() {
+		return airlineService.findAll();
 	}
 	
 	public List<Airport> getAirports() {

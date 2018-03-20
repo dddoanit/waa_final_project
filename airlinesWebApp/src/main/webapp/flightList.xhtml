@@ -15,8 +15,8 @@
 		<h:panelGrid columns="2">
 			<h:outputLabel value="Airline" />
 			<h:selectOneMenu value="#{listFlightBean.airlineId}">
-				<f:selectItems value="#{listFlightBean.airplanes}" var="item"
-					itemValue="#{item.id}" itemLabel="#{item.model}"></f:selectItems>
+				<f:selectItems value="#{listFlightBean.airlines}" var="item"
+					itemValue="#{item.id}" itemLabel="#{item.name}"></f:selectItems>
 			</h:selectOneMenu>
 			<h:outputLabel value="Departure Date" />
 			<h:inputText id="dateInput" value="#{listFlightBean.departureDate}" label="Date">
