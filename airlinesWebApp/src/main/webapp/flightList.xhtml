@@ -12,55 +12,78 @@
 <h:body>
 	<h1>List Flights</h1>
 	<h:form>
-		<h:selectOneListbox value=""></h:selectOneListbox>
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Airline" />
+			<h:selectOneMenu value="#{listFlightBean.airlineId}">
+				<f:selectItems value="#{listFlightBean.airplanes}" var="item"
+					itemValue="#{item.id}" itemLabel="#{item.model}"></f:selectItems>
+			</h:selectOneMenu>
+			<h:outputLabel value="Departure Date" />
+			<h:inputText id="dateInput" value="#{listFlightBean.departureDate}" label="Date">
+				<f:convertDateTime pattern="MM/dd/yyyy" />
+			</h:inputText>
+			<h:outputLabel value="Departure Time" />
+			<h:inputText id="timeInput" value="#{listFlightBean.departureTime}" label="Date">
+				<f:convertDateTime pattern="HH:mm" />
+			</h:inputText>
+			<h:outputLabel value="Destination" />
+			<h:selectOneMenu value="#{listFlightBean.destinationId}">
+				<f:selectItems value="#{listFlightBean.airports}" var="item"
+					itemValue="#{item.id}" itemLabel="#{item.name}"></f:selectItems>
+			</h:selectOneMenu>
+			
+			<h:commandButton value="Search" actionListener="#{listFlightBean.search()}"></h:commandButton>
+			<h:commandButton value="Clear" actionListener="#{listFlightBean.clear()}"></h:commandButton>
+			
+		</h:panelGrid>
 		<h:dataTable value="#{listFlightBean.flights}" var="flight">
 			<h:column>
 				<f:facet name="header">Flight Number</f:facet>
-				<h:outputText value="#{flight.flightnr}" /> 
+				<h:outputText value="#{flight.flightnr}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">Airline</f:facet>
-				<h:outputText value="#{flight.airline.name}" /> 
+				<h:outputText value="#{flight.airline.name}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">Departure Date</f:facet>
-				<h:outputText value="#{flight.departureDate}" /> 
+				<h:outputText value="#{flight.departureDate}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">Departure Time</f:facet>
-				<h:outputText value="#{flight.departureTime}" /> 
+				<h:outputText value="#{flight.departureTime}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">Arrival Date</f:facet>
-				<h:outputText value="#{flight.arrivalDate}" /> 
+				<h:outputText value="#{flight.arrivalDate}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">Arrival Time</f:facet>
-				<h:outputText value="#{flight.arrivalTime}" /> 
+				<h:outputText value="#{flight.arrivalTime}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">Origin Airport</f:facet>
 				<h:outputText value="#{flight.origin}">
 					<f:converter converterId="airportConverter"></f:converter>
-				</h:outputText> 
+				</h:outputText>
 			</h:column>
 			<h:column>
 				<f:facet name="header">Destination Airport</f:facet>
 				<h:outputText value="#{flight.destination}">
 					<f:converter converterId="airportConverter"></f:converter>
-				</h:outputText> 
+				</h:outputText>
 			</h:column>
 			<h:column>
 				<f:facet name="header">Airplaine Model</f:facet>
 				<h:outputText value="#{flight.airplane.model}">
-				</h:outputText> 
+				</h:outputText>
 			</h:column>
 			<h:column>
 				<f:facet name="header">Airplaine Capacity</f:facet>
 				<h:outputText value="#{flight.airplane.capacity}">
-				</h:outputText> 
+				</h:outputText>
 			</h:column>
-			
+
 		</h:dataTable>
 	</h:form>
 </h:body>

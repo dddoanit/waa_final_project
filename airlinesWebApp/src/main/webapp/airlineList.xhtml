@@ -11,8 +11,8 @@
 </h:head>
 <h:body>
 	<h1>List of Airlines</h1>
-	<h:link value="Add Airline" action="#{airlineBeanManager.createForm()}"></h:link>
 	<h:form>
+		<h:commandLink value="Add Airline" action="#{airlineBeanManager.createForm()}"></h:commandLink>
 		<h:dataTable value="#{airlineBeanManager.airlines}" var="airline">
 			<h:column>
 				<f:facet name="header">Airline</f:facet>
