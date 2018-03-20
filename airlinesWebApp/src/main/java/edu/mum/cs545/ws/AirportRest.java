@@ -36,7 +36,7 @@ public class AirportRest {
 		airportService.delete(airport);
 	}
 
-	// update airport
+	// Update airport
 	@POST
 	@Path("/update")
 	public Airport update(Airport airport) {
