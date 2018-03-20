@@ -12,24 +12,11 @@
 <h:body>
 	<h1>List Flights</h1>
 	<h:form>
-		<h:dataTable value="#{listAccountController.allAccounts}" var="account">
+		<h:dataTable value="#{listFlightBean.flights}" var="flight">
 			<h:column>
-				<f:facet name="header">Name</f:facet>
-				<h:link value="#{account.customer.name}" outcome="detail">
-           			 <f:param name="accountnumber" value="#{account.accountnumber}" />
-        			</h:link>
+				<f:facet name="header">Flight Number</f:facet>
+				<h:outputText value="#{flight.flightnr}" /> 
 			</h:column>
-			
-			<h:column>
-				<f:facet name="header">Account Number</f:facet>
-				<h:outputText value="#{account.accountnumber}" /> 
-			</h:column>
-			
-			<h:column>
-				<f:facet name="header">Balance</f:facet>
-				<h:outputText value="#{account.balance}" /> 
-			</h:column>
-			
 		</h:dataTable>
 	</h:form>
 </h:body>
