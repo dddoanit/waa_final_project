@@ -1,5 +1,7 @@
 package edu.mum.cs545.ws;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +24,8 @@ public class FlightRest {
 
 	@Inject
 	private FlightService flightService;
+	
+	SimpleDateFormat sf = new SimpleDateFormat("MM/dd/yyyy HH:mm");
 
 	@Path("update")
 	@POST
@@ -65,37 +69,33 @@ public class FlightRest {
 		return flightService.findByAirplane(airplane);
 	}
 
-	@SuppressWarnings("deprecation")
 	@Path("findByArrival")
 	@GET
-	public List<Flight> findByArrival(@QueryParam("datetime") String sDatetime) {
-		Date datetime = new Date(sDatetime);
+	public List<Flight> findByArrival(@QueryParam("datetime") String sDatetime) throws ParseException {
+		Date datetime = sf.parse(sDatetime);
 		return flightService.findByArrival(datetime);
 	}
 
-	@SuppressWarnings("deprecation")
 	@Path("findByArrivalBetween")
 	@GET
-	public List<Flight> findByArrivalBetween(@QueryParam("datetimeFrom") String sDatetimeFrom, @QueryParam("datetimeTo") String sDatetimeTo) {
-		Date datetimeFrom = new Date(sDatetimeFrom);
-		Date datetimeTo = new Date(sDatetimeTo);
+	public List<Flight> findByArrivalBetween(@QueryParam("datetimeFrom") String sDatetimeFrom, @QueryParam("datetimeTo") String sDatetimeTo) throws ParseException {
+		Date datetimeFrom = sf.parse(sDatetimeFrom);
+		Date datetimeTo = sf.parse(sDatetimeTo);
 		return flightService.findByArrivalBetween(datetimeFrom, datetimeTo);
 	}
 
-	@SuppressWarnings("deprecation")
 	@Path("findByDeparture")
 	@GET
-	public List<Flight> findByDeparture(@QueryParam("datetime") String sDatetime) {
-		Date datetime = new Date(sDatetime);
+	public List<Flight> findByDeparture(@QueryParam("datetime") String sDatetime) throws ParseException {
+		Date datetime = sf.parse(sDatetime);
 		return flightService.findByDeparture(datetime);
 	}
 
-	@SuppressWarnings("deprecation")
 	@Path("findByDepartureBetween")
 	@GET
-	public List<Flight> findByDepartureBetween(@QueryParam("datetimeFrom") String sDatetimeFrom, @QueryParam("datetimeTo") String sDatetimeTo) {
-		Date datetimeFrom = new Date(sDatetimeFrom);
-		Date datetimeTo = new Date(sDatetimeTo);
+	public List<Flight> findByDepartureBetween(@QueryParam("datetimeFrom") String sDatetimeFrom, @QueryParam("datetimeTo") String sDatetimeTo) throws ParseException {
+		Date datetimeFrom = sf.parse(sDatetimeFrom);
+		Date datetimeTo = sf.parse(sDatetimeTo);
 		return flightService.findByDepartureBetween(datetimeFrom, datetimeTo);
 	}
 
