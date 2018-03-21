@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PROCESS model-entity="JSFProcess">
  <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
-  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#index.xhtml:0" NAME="item"
-   PATH="/index.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="flightList::#flightList" NAME="output"
-    PATH="/flightList" TARGET="rules:#flightList" TITLE="flightList" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
- </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#flightList" PATH="/flightList"
-  SHAPE="272,33,0,0" model-entity="JSFProcessGroup"/>
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#airline.xhtml" PATH="/airline.xhtml"
   SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#airline.xhtml:0" NAME="item"
    PATH="/airline.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="airlineList::#airlineList" NAME="output"
     PATH="/airlineList" TARGET="rules:#airlineList" TITLE="airlineList" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="flightList::#flightList.xhtml"
+    NAME="output1" PATH="/flightList.xhtml"
+    TARGET="rules:#flightList.xhtml" TITLE="flightList" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="airlineList::#airlineList.xhtml"
+    NAME="output2" PATH="/airlineList.xhtml"
+    TARGET="rules:#airlineList.xhtml" TITLE="airlineList" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#airlineList.xhtml" PATH="/airlineList.xhtml"
@@ -26,10 +24,10 @@
     PATH="/airline" TARGET="rules:#airline" TITLE="edit" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT ID="editForm::#airline" NAME="output1"
     PATH="/airline" TARGET="rules:#airline" TITLE="editForm" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
-  <PROCESS-ITEM ID="rules:#airlineList.xhtml:1" NAME="item1"
-   PATH="/airlineList.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="delete::#airlineList" NAME="output"
+   <PROCESS-ITEM-OUTPUT ID="airlineList::#airlineList.xhtml"
+    NAME="output2" PATH="/airlineList.xhtml"
+    TARGET="rules:#airlineList.xhtml" TITLE="airlineList" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="delete::#airlineList" NAME="output3"
     PATH="/airlineList" TARGET="rules:#airlineList" TITLE="delete" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
@@ -42,6 +40,12 @@
    PATH="/flightList.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="home::#index.xhtml" NAME="output"
     PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="home" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="flightList::#flightList.xhtml"
+    NAME="output1" PATH="/flightList.xhtml"
+    TARGET="rules:#flightList.xhtml" TITLE="flightList" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="airlineList::#airlineList.xhtml"
+    NAME="output2" PATH="/airlineList.xhtml"
+    TARGET="rules:#airlineList.xhtml" TITLE="airlineList" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
 </PROCESS>

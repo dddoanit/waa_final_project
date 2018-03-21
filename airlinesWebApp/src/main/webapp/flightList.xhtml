@@ -12,7 +12,11 @@
 	<!-- Bootstrap core CSS -->
     <h:outputStylesheet name="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
 </h:head>
+<f:metadata>
+	<f:viewAction action="#{listFlightBean.getAllFlights()}"></f:viewAction>
+</f:metadata>
 <h:body>
+	<mum:menu></mum:menu>
 	<h1>List of Flights</h1>
 	<h:form>
 		<h:panelGrid columns="2" id="searchPanel">
@@ -40,6 +44,7 @@
 			<h:commandButton value="Clear" actionListener="#{listFlightBean.clear()}"></h:commandButton>
 			
 		</h:panelGrid>
+		<br></br>
 		<h:dataTable value="#{listFlightBean.flights}" var="flight" id="dtFlights" styleClass="table table-striped table-bordered table-hover table-condensed">
 			<h:column>
 				<f:facet name="header">Flight Number</f:facet>
