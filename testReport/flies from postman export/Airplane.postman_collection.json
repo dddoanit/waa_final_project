@@ -1,0 +1,262 @@
+{
+	"id": "adcc8c96-f596-2034-8b06-47adfb74825b",
+	"name": "Airplane",
+	"description": "",
+	"order": [
+		"3c66e174-3ca1-5b38-f6ef-1d0cc9cc7277",
+		"1f58faea-9122-cabb-6ce2-b0e1903b0157",
+		"9a999067-9db6-1589-a565-1ce36a268c9a",
+		"a5af52ca-7ba8-fefb-29e1-98a9225274d4",
+		"6ef2a8d7-2975-889e-0306-ac18457a7897",
+		"b021bc38-ea1a-af47-1d33-4f391cf9feb2",
+		"468c040e-2caf-bdf2-6d45-de6ad3f890b8",
+		"c65c3c70-cd9d-9e0a-c7b5-a4492fde2962"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1521603901108,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "1f58faea-9122-cabb-6ce2-b0e1903b0157",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/airlinesWebApp/rs/airplane/update",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "adcc8c96-f596-2034-8b06-47adfb74825b",
+			"data": [],
+			"dataMode": "raw",
+			"name": "update",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1521647925766,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n        \n        \"id\": 28,\n        \"model\": \"746\"\n       \n    }\n\n"
+		},
+		{
+			"id": "3c66e174-3ca1-5b38-f6ef-1d0cc9cc7277",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/airlinesWebApp/rs/airplane/create",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "adcc8c96-f596-2034-8b06-47adfb74825b",
+			"data": [],
+			"dataMode": "raw",
+			"name": "create",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1521647737916,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n        \"capacity\": 417,\n        \"id\": 29,\n        \"model\": \"740\",\n        \"serialnr\": \"12323\"\n    }\n\n"
+		},
+		{
+			"id": "468c040e-2caf-bdf2-6d45-de6ad3f890b8",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/airlinesWebApp/rs/airplane/findAll",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "adcc8c96-f596-2034-8b06-47adfb74825b",
+			"data": null,
+			"dataMode": "params",
+			"name": "findAll",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1521648238576,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "6ef2a8d7-2975-889e-0306-ac18457a7897",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/airlinesWebApp/rs/airplane/findByFlight",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "adcc8c96-f596-2034-8b06-47adfb74825b",
+			"data": [],
+			"dataMode": "raw",
+			"name": "findByFlight",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1521648151620,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\r\n             \"id\":32\r\n                         \r\n    }"
+		},
+		{
+			"id": "9a999067-9db6-1589-a565-1ce36a268c9a",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/airlinesWebApp/rs/airplane/delete",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "adcc8c96-f596-2034-8b06-47adfb74825b",
+			"data": [],
+			"dataMode": "raw",
+			"name": "delete",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1521648017920,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n        \"capacity\": 417,\n        \"id\": 28,\n        \"model\": \"745\",\n        \"serialnr\": \"12323\"\n    }"
+		},
+		{
+			"id": "a5af52ca-7ba8-fefb-29e1-98a9225274d4",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/airlinesWebApp/rs/airplane/findBySrlnr?serialno=54321",
+			"queryParams": [
+				{
+					"key": "serialno",
+					"value": "54321",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "adcc8c96-f596-2034-8b06-47adfb74825b",
+			"data": null,
+			"dataMode": "params",
+			"name": "findBySrlnr",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1521648078541,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "b021bc38-ea1a-af47-1d33-4f391cf9feb2",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/airlinesWebApp/rs/airplane/findByModel?model=A380",
+			"queryParams": [
+				{
+					"key": "model",
+					"value": "A380",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "adcc8c96-f596-2034-8b06-47adfb74825b",
+			"data": null,
+			"dataMode": "params",
+			"name": "findByModel",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1521648191983,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "c65c3c70-cd9d-9e0a-c7b5-a4492fde2962",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/airlinesWebApp/rs/airplane/find",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "adcc8c96-f596-2034-8b06-47adfb74825b",
+			"data": [],
+			"dataMode": "raw",
+			"name": "find",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1521648734070,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n   \"id\": 22\n    \n}\n"
+		}
+	]
+}
