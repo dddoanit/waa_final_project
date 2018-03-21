@@ -18,34 +18,55 @@
 <h:body>
 	<mum:menu></mum:menu>
 	<div class="container">
-		<h1>List of Flights</h1>
-		<h:form>
-			<h:panelGrid columns="2" id="searchPanel">
-				<h:outputLabel value="Airline" />
-				<h:selectOneMenu value="#{listFlightBean.airlineId}">
-					<f:selectItems value="#{listFlightBean.airlines}" var="item"
-						itemValue="#{item.id}" itemLabel="#{item.name}"></f:selectItems>
-				</h:selectOneMenu>
-				<h:outputLabel value="Departure Date" />
-				<h:inputText id="dateInput" value="#{listFlightBean.departureDate}" label="Date">
-					<f:convertDateTime pattern="MM/dd/yyyy"/>
-				</h:inputText>
-				<h:outputLabel value="Departure Time" />
-				<h:inputText id="timeInput" value="#{listFlightBean.departureTime}" label="Date">
-					<f:convertDateTime pattern="HH:mm" />
-				</h:inputText>
-				<h:outputLabel value="Destination" />
-				<h:selectOneMenu value="#{listFlightBean.destinationId}">
-					<f:selectItems value="#{listFlightBean.airports}" var="item"
-						itemValue="#{item.id}" itemLabel="#{item.name}"></f:selectItems>
-				</h:selectOneMenu>
-				<h:commandButton value="Search" actionListener="#{listFlightBean.search()}">
-					<f:ajax execute="searchPanel" render="dtFlights" listener="#{listFlightBean.search()}"></f:ajax>
-				</h:commandButton>
-				<h:commandButton value="Clear" actionListener="#{listFlightBean.clear()}"></h:commandButton>
-				
-			</h:panelGrid>
-			<br></br>
+		<!-- <h1>List of Flights</h1> -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">List of Flights</h3>
+			</div>
+			<div class="panel-body">
+				<h:form>
+					<div class="form-group row">
+						<h:outputLabel value="Airline" styleClass="col-sm-2 col-form-label"/>
+						<div class="col-sm-4">
+							<h:selectOneMenu value="#{listFlightBean.airlineId}" styleClass="form-control">
+								<f:selectItems value="#{listFlightBean.airlines}" var="item"
+								itemValue="#{item.id}" itemLabel="#{item.name}"></f:selectItems>
+							</h:selectOneMenu>
+						</div>
+						<h:outputLabel value="Destination" styleClass="col-sm-2 col-form-label"/>
+						<div class="col-sm-4">
+							<h:selectOneMenu value="#{listFlightBean.destinationId}" styleClass="form-control">
+								<f:selectItems value="#{listFlightBean.airports}" var="item"
+									itemValue="#{item.id}" itemLabel="#{item.name}"></f:selectItems>
+							</h:selectOneMenu>
+						</div>
+					</div>
+					<div class="form-group row">
+						<h:outputLabel value="Departure Date" styleClass="col-sm-2 col-form-label"/>
+						<div class="col-sm-4">
+							<h:inputText id="dateInput" value="#{listFlightBean.departureDate}" label="Date">
+								<f:convertDateTime pattern="MM/dd/yyyy" />
+							</h:inputText>
+						</div>
+						<h:outputLabel value="Departure Time" styleClass="col-sm-2 col-form-label"/>
+						<div class="col-sm-4">
+							<h:inputText id="timeInput" value="#{listFlightBean.departureTime}" label="Date">
+								<f:convertDateTime pattern="HH:mm" />
+							</h:inputText>
+						</div>
+					</div>
+					<div class="form-group row">
+						<h:commandButton value="Search" actionListener="#{listFlightBean.search()}" styleClass="btn btn-primary">
+						</h:commandButton>
+						<h:commandButton value="Clear" actionListener="#{listFlightBean.clear()}" styleClass="btn btn-secondary"></h:commandButton>
+					</div>
+					<div class="form-group row">
+						
+					</div>
+				</h:form>
+			</div>
+		</div>
+		<div>
 			<h:dataTable value="#{listFlightBean.flights}" var="flight" id="dtFlights" styleClass="table table-striped table-bordered table-hover table-condensed">
 				<h:column>
 					<f:facet name="header">Flight Number</f:facet>
@@ -94,7 +115,7 @@
 					</h:outputText>
 				</h:column>
 			</h:dataTable>
-		</h:form>
+		</div>
 	</div>
 	<!-- Bootstrap core JavaScript
     ================================================== -->
