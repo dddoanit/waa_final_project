@@ -1,6 +1,7 @@
 Test file for Airline Service
 1.Create
 url: http://localhost:8080/airlinesWebApp/rs/airline/create
+method: POST
 input:
 {
 	"name":"EritreanAirline"
@@ -9,6 +10,7 @@ output: void
 
 2.delete:
 url: http://localhost:8080/airlinesWebApp/rs/airline/delete
+method: POST
 input: {
              "id": 1051
     }
@@ -16,6 +18,7 @@ output: void
 
 3.update:
 url: http://localhost:8080/airlinesWebApp/rs/airline/update
+method: POST
 input: 
 {
         "id": 17,
@@ -29,6 +32,7 @@ output: Airline
     }
 4.find:
 url: http://localhost:8080/airlinesWebApp/rs/airline/find
+method: POST
 input: {
        
         "id": 1001
@@ -42,7 +46,8 @@ Output
 
 5. findByName
 url: http://localhost:8080/airlinesWebApp/rs/airline/findByName?name=oneworld
-input: name=oneworld
+method: GET
+input:NONE
 
     output:
 {
@@ -53,10 +58,9 @@ input: name=oneworld
 
 
 
-
-
 6.: findByFlight
 url: http://localhost:8080/airlinesWebApp/rs/airline/findByFlightfind
+method: POST
 input: {
         "id": 1
         
@@ -71,6 +75,7 @@ output: [
 
 7.findAll:
 url: http://localhost:8080/airlinesWebApp/rs/airline/findAll
+method: GET
 input: none
 output:
 [
