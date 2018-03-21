@@ -1,0 +1,136 @@
+Test file for Airplane
+1. Create
+url: http://localhost:8080/airlinesWebApp/rs/airplane/create
+method: POST
+input:{
+        "capacity": 417,
+        "id": 28,
+        "model": "745",
+        "serialnr": "12323"
+    }
+
+output: void
+
+2. delete
+url: http://localhost:8080/airlinesWebApp/rs/airplane/delete
+method: POST
+input:{
+        "capacity": 416,
+        "id": 22,
+        "model": "747",
+        "serialnr": "32154"
+    }
+
+output: void
+
+3. update
+url: http://localhost:8080/airlinesWebApp/rs/airplane/update
+method: POST
+input:{
+             "serialnr": 12345
+    }
+
+output: {
+    "capacity": 0,
+    "id": 2101,
+    "serialnr": "12345"
+}
+
+
+4. findBySrlnr
+url: http://localhost:8080/airlinesWebApp/rs/airplane/findBySrlnr?serialno=54321
+method: GET
+input:NONE
+output: {
+    "capacity": 416,
+    "id": 7,
+    "model": "747",
+    "serialnr": "54321"
+}
+
+
+
+5. findByFlight
+url:http://localhost:8080/airlinesWebApp/rs/airplane/findByFlight 
+method: post
+input:{
+             "id":32
+                         
+    }
+
+output: [
+    {
+        "capacity": 416,
+        "id": 22,
+        "model": "747",
+        "serialnr": "32154"
+    }
+]
+
+6. findByModel
+url: http://localhost:8080/airlinesWebApp/rs/airplane/findByModel?model=A380
+method: GET
+input:NONE
+output: [
+    {
+        "capacity": 519,
+        "id": 3,
+        "model": "A380",
+        "serialnr": "12345"
+    },
+    {
+        "capacity": 519,
+        "id": 18,
+        "model": "A380",
+        "serialnr": "34512"
+    }
+]
+
+
+
+7. findAll
+url: http://localhost:8080/airlinesWebApp/rs/airplane/findAll
+method: GET
+input:NONE
+
+output: [
+    {
+        "capacity": 519,
+        "id": 3,
+        "model": "A380",
+        "serialnr": "12345"
+    },
+    {
+        "capacity": 416,
+        "id": 7,
+        "model": "747",
+        "serialnr": "54321"
+    },
+    {
+        "capacity": 416,
+        "id": 15,
+        "model": "747",
+        "serialnr": "43215"
+    },
+    {
+        "capacity": 519,
+        "id": 18,
+        "model": "A380",
+        "serialnr": "34512"
+    },
+    {
+        "capacity": 416,
+        "id": 22,
+        "model": "747",
+        "serialnr": "32154"
+    },
+    {
+        "capacity": 0,
+        "id": 1051
+    },
+    {
+        "capacity": 0,
+        "id": 2051,
+        "serialnr": "12345"
+    }
+]
