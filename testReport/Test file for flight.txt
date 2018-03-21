@@ -152,7 +152,7 @@ output:
     }
 ]
 4. findByDeparture
-url: http://localhost:8080/airlinesWebApp/rs/flight/findByDeparture?datetime= 8/6/09 19:10
+url: http://localhost:8080/airlinesWebApp/rs/flight/findByDeparture?datetime=8/6/2009 19:10
 method: GET
 input:none
 output: [
@@ -905,3 +905,73 @@ output:
     }
 ]
 
+11. Update
+URL: http://localhost:8080/airlinesWebApp/rs/flight/update
+METHOD: POST
+INPUT:
+{
+        "airline": {
+            "id": 2,
+            "name": "SkyTeam"
+        },
+        "airplane": {
+            "capacity": 519,
+            "id": 3,
+            "model": "A380",
+            "serialnr": "12345"
+        },
+        "arrivalDate": "6/25/15",
+        "arrivalTime": "9:00 AM",
+        "departureDate": "8/6/09",
+        "departureTime": "7:10 PM",
+        "destination": {
+            "airportcode": "AMS",
+            "city": "Amsterdam",
+            "country": "The Netherlands",
+            "id": 4,
+            "name": "Schiphol"
+        },
+        "flightnr": "NW 36 - TEST",
+        "id": 1,
+        "origin": {
+            "airportcode": "DTW",
+            "city": "Detroid",
+            "country": "USA",
+            "id": 5,
+            "name": "Detroid City"
+        }
+    }
+
+OUTPUT:
+{
+    "airline": {
+        "id": 2,
+        "name": "SkyTeam"
+    },
+    "airplane": {
+        "capacity": 519,
+        "id": 3,
+        "model": "A380",
+        "serialnr": "12345"
+    },
+    "arrivalDate": "6/25/15",
+    "arrivalTime": "9:00 AM",
+    "departureDate": "8/6/09",
+    "departureTime": "7:10 PM",
+    "destination": {
+        "airportcode": "AMS",
+        "city": "Amsterdam",
+        "country": "The Netherlands",
+        "id": 4,
+        "name": "Schiphol"
+    },
+    "flightnr": "NW 36 - TEST",
+    "id": 1,
+    "origin": {
+        "airportcode": "DTW",
+        "city": "Detroid",
+        "country": "USA",
+        "id": 5,
+        "name": "Detroid City"
+    }
+}

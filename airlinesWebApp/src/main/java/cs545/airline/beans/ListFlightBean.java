@@ -123,6 +123,7 @@ public class ListFlightBean implements Serializable {
 		this.airlineId = -1;
 		this.destinationId = -1;
 		this.departureDate = null;
+		this.departureTime = null;
 		this.getAllFlights();
 	}
 
