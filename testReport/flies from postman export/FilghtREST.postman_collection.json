@@ -1,0 +1,335 @@
+{
+	"id": "b6d2a135-2f75-c1fd-bd13-2b2e73be4542",
+	"name": "FilghtREST",
+	"description": "",
+	"order": [
+		"960003c1-cde8-09d1-5556-f4542ef6e7aa",
+		"20a1dea9-4ba9-5b3f-e1bf-f2a193c7e343",
+		"436c5d18-d53f-0274-5bd6-f5cead58c231",
+		"d2ff3264-52b1-961f-7c4a-cb3ca6b6164f",
+		"c5d9b25f-e799-34fd-e6ca-33d3e98e4394",
+		"8d3a1334-851a-c065-bdc0-33087275f2f0",
+		"d6e3526a-9821-95df-4f98-40f5d227e91f",
+		"95bfd2de-e094-f059-0a8f-c1214a8ebb44",
+		"5a53075b-358c-c9b8-a6f3-8a17d5b58cae",
+		"85754e07-f0cf-5aca-fdad-5057759dbe63"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1521573062803,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "20a1dea9-4ba9-5b3f-e1bf-f2a193c7e343",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/airlinesWebApp/rs/flight/findByArrival?datetime=6/25/2015 9:00",
+			"queryParams": [
+				{
+					"key": "datetime",
+					"value": "6/25/2015 9:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1521577480818,
+			"name": "findByArrival",
+			"description": "",
+			"collectionId": "b6d2a135-2f75-c1fd-bd13-2b2e73be4542",
+			"responses": []
+		},
+		{
+			"id": "436c5d18-d53f-0274-5bd6-f5cead58c231",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/airlinesWebApp/rs/flight/findByDeparture?datetime=8/6/2009 19:10",
+			"queryParams": [
+				{
+					"key": "datetime",
+					"value": "8/6/2009 19:10",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1521651254221,
+			"name": "findByDeparture",
+			"description": "",
+			"collectionId": "b6d2a135-2f75-c1fd-bd13-2b2e73be4542",
+			"responses": []
+		},
+		{
+			"id": "5a53075b-358c-c9b8-a6f3-8a17d5b58cae",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/airlinesWebApp/rs/flight/findByDestination",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "b6d2a135-2f75-c1fd-bd13-2b2e73be4542",
+			"data": [],
+			"dataMode": "raw",
+			"name": "findByDestination",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1521580965628,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n       \n            \"id\": 5\n            \n            \n           \n        }"
+		},
+		{
+			"id": "85754e07-f0cf-5aca-fdad-5057759dbe63",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/airlinesWebApp/rs/flight/findByArrivalBetween?datetimeFrom=6/25/2015 09:00&datetimeTo=6/25/2015 10:00",
+			"queryParams": [
+				{
+					"key": "datetimeFrom",
+					"value": "6/25/2015 09:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datetimeTo",
+					"value": "6/25/2015 10:00",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "b6d2a135-2f75-c1fd-bd13-2b2e73be4542",
+			"data": null,
+			"dataMode": "params",
+			"name": "findByArrivalBetween",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1521651471414,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "8d3a1334-851a-c065-bdc0-33087275f2f0",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/airlinesWebApp/rs/flight/findByNumber?flightnr=QF 12\n",
+			"queryParams": [
+				{
+					"key": "flightnr",
+					"value": "QF 12\n",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "b6d2a135-2f75-c1fd-bd13-2b2e73be4542",
+			"data": null,
+			"dataMode": "params",
+			"name": "findByNumber",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1521579910809,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "95bfd2de-e094-f059-0a8f-c1214a8ebb44",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/airlinesWebApp/rs/flight/findByOrigin",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "b6d2a135-2f75-c1fd-bd13-2b2e73be4542",
+			"data": [],
+			"dataMode": "raw",
+			"name": "findByOrigin",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1521580614574,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n       \n            \"id\": 20\n            \n           \n        }"
+		},
+		{
+			"id": "960003c1-cde8-09d1-5556-f4542ef6e7aa",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/airlinesWebApp/rs/flight/findAll",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "b6d2a135-2f75-c1fd-bd13-2b2e73be4542",
+			"data": [],
+			"dataMode": "raw",
+			"name": "findAll",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1521573550697,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": ""
+		},
+		{
+			"id": "c5d9b25f-e799-34fd-e6ca-33d3e98e4394",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/airlinesWebApp/rs/flight/update",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1521651693846,
+			"name": "update",
+			"description": "",
+			"collectionId": "b6d2a135-2f75-c1fd-bd13-2b2e73be4542",
+			"responses": [],
+			"rawModeData": "  {\r\n        \"airline\": {\r\n            \"id\": 2,\r\n            \"name\": \"SkyTeam\"\r\n        },\r\n        \"airplane\": {\r\n            \"capacity\": 519,\r\n            \"id\": 3,\r\n            \"model\": \"A380\",\r\n            \"serialnr\": \"12345\"\r\n        },\r\n        \"arrivalDate\": \"6/25/15\",\r\n        \"arrivalTime\": \"9:00 AM\",\r\n        \"departureDate\": \"8/6/09\",\r\n        \"departureTime\": \"7:10 PM\",\r\n        \"destination\": {\r\n            \"airportcode\": \"AMS\",\r\n            \"city\": \"Amsterdam\",\r\n            \"country\": \"The Netherlands\",\r\n            \"id\": 4,\r\n            \"name\": \"Schiphol\"\r\n        },\r\n        \"flightnr\": \"NW 36 - TEST\",\r\n        \"id\": 1,\r\n        \"origin\": {\r\n            \"airportcode\": \"DTW\",\r\n            \"city\": \"Detroid\",\r\n            \"country\": \"USA\",\r\n            \"id\": 5,\r\n            \"name\": \"Detroid City\"\r\n        }\r\n    }"
+		},
+		{
+			"id": "d2ff3264-52b1-961f-7c4a-cb3ca6b6164f",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/airlinesWebApp/rs/flight/find",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1521579256067,
+			"name": "find",
+			"description": "",
+			"collectionId": "b6d2a135-2f75-c1fd-bd13-2b2e73be4542",
+			"responses": [],
+			"rawModeData": "{\r\n             \"id\": 6\r\n             \r\n        \r\n          }"
+		},
+		{
+			"id": "d6e3526a-9821-95df-4f98-40f5d227e91f",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/airlinesWebApp/rs/flight/findByAirline",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "b6d2a135-2f75-c1fd-bd13-2b2e73be4542",
+			"data": [],
+			"dataMode": "raw",
+			"name": "findByAirline",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1521580225810,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": " {\n       \n            \"id\": 10\n           \n        }"
+		}
+	]
+}

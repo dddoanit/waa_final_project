@@ -134,3 +134,16 @@ output: [
         "serialnr": "12345"
     }
 ]
+8.find
+url: http://localhost:8080/airlinesWebApp/rs/airplane/find
+method: POST
+input:{
+   "id": 22
+    
+}
+output:{
+    "capacity": 416,
+    "id": 22,
+    "model": "747",
+    "serialnr": "32154"
+}

@@ -6,20 +6,24 @@
 <h:head>
 	<title>Airlines</title>
 	<!-- Bootstrap core CSS -->
-    <h:outputStylesheet name="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+	<h:outputStylesheet name="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
 </h:head>
 <h:body>
-	<h1>Airlines</h1>
-	<h:form>
-		<h:panelGrid>
-			<h:commandLink value="List of Flights" action="flightList.xhtml" actionListener="#{listFlightBean.getAllFlights()}"></h:commandLink>
-			<h:link value="List of Airlines" outcome="airlineList"></h:link>
-		</h:panelGrid>
-	</h:form>
-	<!-- Bootstrap core JavaScript
+	<div class="container">
+		<h1>Airlines</h1>
+		<h:form>
+			<h:panelGrid>
+				<h:commandLink value="List of Flights" action="flightList.xhtml"
+					actionListener="#{listFlightBean.getAllFlights()}"></h:commandLink>
+				<h:link value="List of Airlines" outcome="airlineList"></h:link>
+			</h:panelGrid>
+		</h:form>
+		<!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <h:outputScript name="bootstrap-3.3.7-dist/js/bootstrap.min.js"/>
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<h:outputScript name="bootstrap-3.3.7-dist/js/bootstrap.min.js" />
+	</div>
 </h:body>
 </html>

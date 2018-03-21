@@ -13,22 +13,25 @@
 </h:head>
 <h:body>
 	<mum:menu></mum:menu>
-	<h2>Airline detail</h2>
-	<h:form>
-		<h:panelGrid columns="2">
-			<h:outputLabel for="name">Airline Name:</h:outputLabel>
-			<h:inputText value="#{airlineBeanManager.name}" required="true"
-				requiredMessage="Airline Name is required." />
-			<h:commandButton value="Save" action="#{airlineBeanManager.create}" />
-			<h:commandButton action="home" value="Cancel" immediate="true" />
-		</h:panelGrid>
-		<mum:flightTable flights="#{airlineBeanManager.allFlights}"
-			rendered="#{airlineBeanManager.airline != null}"></mum:flightTable>
-	</h:form>
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <h:outputScript name="bootstrap-3.3.7-dist/js/bootstrap.min.js"/>
+	<div class="container">
+		<h2>Airline detail</h2>
+		<h:form>
+			<h:panelGrid columns="2">
+				<h:outputLabel for="name">Airline Name:</h:outputLabel>
+				<h:inputText value="#{airlineBeanManager.name}" required="true"
+					requiredMessage="Airline Name is required." />
+				<h:commandButton value="Save" action="#{airlineBeanManager.create}" />
+				<h:commandButton action="home" value="Cancel" immediate="true" />
+			</h:panelGrid>
+			<mum:flightTable flights="#{airlineBeanManager.allFlights}"
+				rendered="#{airlineBeanManager.airline != null}"></mum:flightTable>
+		</h:form>
+	</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<h:outputScript name="bootstrap-3.3.7-dist/js/bootstrap.min.js" />
 </h:body>
 </html>
