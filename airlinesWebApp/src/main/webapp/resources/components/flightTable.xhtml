@@ -10,8 +10,8 @@
 	<composite:attribute name="flights" />
 </composite:interface>
 <composite:implementation>
-	<h1>List of Flights</h1>
-	<h:dataTable value="#{cc.attrs.flights}" var="flight">
+	<h3>List of Flights</h3>
+	<h:dataTable value="#{cc.attrs.flights}" var="flight" styleClass="table table-striped table-bordered table-hover table-condensed">
 		<h:column>
 			<f:facet name="header">Flight Number</f:facet>
 			<h:outputText value="#{flight.flightnr}" />

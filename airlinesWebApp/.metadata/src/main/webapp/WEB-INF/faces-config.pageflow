@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15215734915830" configfile="/airlinesWebApp/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="122" y="178" id="pf15215735396521" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15215735396522" path="/index.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="flightList" x="338" y="178" id="pf15215735396523" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15215735396522" path="/flightList"/>
-  <nodes xsi:type="pageflow:PFPage" name="airline.xhtml" x="122" y="562" id="pf15215735396524" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15215735396525" path="/airline.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="airlineList" x="338" y="562" id="pf15215735396526" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf15215735396525 pf15215795176100" path="/airlineList"/>
-  <nodes xsi:type="pageflow:PFPage" name="airlineList.xhtml" x="122" y="946" id="pf15215795176101" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf15215795176102 pf15215795176100 pf15215802776824" path="/airlineList.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="airline" x="338" y="946" id="pf15215795176103" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" inlinks="pf15215795176102 pf15215802776824" path="/airline"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="338" y="946" id="pf15215735396521" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" outlinks="pf15215735396522" inlinks="pf15216465128680 pf15216465128681 pf15216466796033" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="flightList" x="554" y="946" id="pf15215735396523" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15215735396522" path="/flightList"/>
+  <nodes xsi:type="pageflow:PFPage" name="airline.xhtml" x="122" y="178" id="pf15215735396524" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf15215735396525 pf15216466796033" path="/airline.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="airlineList" x="338" y="178" id="pf15215735396526" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf15215735396525 pf15215795176100" path="/airlineList"/>
+  <nodes xsi:type="pageflow:PFPage" name="airlineList.xhtml" x="122" y="562" id="pf15215795176101" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf15215795176102 pf15215795176100 pf15215802776824 pf15216465128681" path="/airlineList.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="airline" x="338" y="562" id="pf15215795176103" referenceLink="//@navigationRule.3/@navigationCase.1/@toViewId|" inlinks="pf15215795176102 pf15215802776824" path="/airline"/>
+  <nodes xsi:type="pageflow:PFPage" name="flightList.xhtml" x="122" y="946" id="pf15216465128682" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf15216465128680" path="/flightList.xhtml"/>
   <links id="pf15215735396522" target="pf15215735396523" source="pf15215735396521" outcome="flightList"/>
   <links id="pf15215735396525" target="pf15215735396526" source="pf15215735396524" outcome="airlineList"/>
   <links id="pf15215795176102" target="pf15215795176103" source="pf15215795176101" outcome="edit"/>
   <links id="pf15215795176100" target="pf15215735396526" source="pf15215795176101" outcome="delete"/>
   <links id="pf15215802776824" target="pf15215795176103" source="pf15215795176101" outcome="editForm"/>
+  <links id="pf15216465128680" target="pf15215735396521" source="pf15216465128682" outcome="home"/>
+  <links id="pf15216465128681" target="pf15215735396521" source="pf15215795176101" outcome="home"/>
+  <links id="pf15216466796033" target="pf15215735396521" source="pf15215735396524" outcome="home"/>
 </pageflow:Pageflow>
