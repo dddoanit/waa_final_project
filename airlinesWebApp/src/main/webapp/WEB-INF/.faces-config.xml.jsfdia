@@ -10,4 +10,38 @@
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#flightList" PATH="/flightList"
   SHAPE="272,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#airline.xhtml" PATH="/airline.xhtml"
+  SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#airline.xhtml:0" NAME="item"
+   PATH="/airline.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="airlineList::#airlineList" NAME="output"
+    PATH="/airlineList" TARGET="rules:#airlineList" TITLE="airlineList" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#airlineList.xhtml" PATH="/airlineList.xhtml"
+  SHAPE="32,241,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#airlineList.xhtml:0" NAME="item"
+   PATH="/airlineList.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="edit::#airline" NAME="output"
+    PATH="/airline" TARGET="rules:#airline" TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editForm::#airline" NAME="output1"
+    PATH="/airline" TARGET="rules:#airline" TITLE="editForm" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#airlineList.xhtml:1" NAME="item1"
+   PATH="/airlineList.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="delete::#airlineList" NAME="output"
+    PATH="/airlineList" TARGET="rules:#airlineList" TITLE="delete" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#airline" PATH="/airline" SHAPE="272,257,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#airlineList" PATH="/airlineList"
+  SHAPE="272,145,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#flightList.xhtml" PATH="/flightList.xhtml"
+  SHAPE="32,417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#flightList.xhtml:0" NAME="item"
+   PATH="/flightList.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="home::#index.xhtml" NAME="output"
+    PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="home" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
 </PROCESS>

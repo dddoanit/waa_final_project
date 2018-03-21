@@ -68,7 +68,7 @@ public class FlightService {
 	}
 
 	public List<Flight> findByArrivalBetween(Date datetimeFrom, Date datetimeTo) {
-		return flightDao.findByArrivalBetween(datetimeFrom, datetimeFrom, datetimeTo, datetimeTo);
+		return flightDao.findByArrivalBetween(datetimeFrom, datetimeTo, datetimeFrom, datetimeTo);
 	}
 
 	public List<Flight> findByDeparture(Date datetime) {
