@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:mum="http://xmlns.jcp.org/jsf/composite/components">
 
 <h:head>
 	<title>List of Airlines</title>
@@ -12,28 +13,33 @@
 <h:body>
 	<h1>List of Airlines</h1>
 	<h:form>
-		<h:commandLink value="Add Airline" action="#{airlineBeanManager.createForm()}"></h:commandLink>
+		<h:commandLink value="Add Airline"
+			action="#{airlineBeanManager.createForm()}"></h:commandLink>
 		<h:dataTable value="#{airlineBeanManager.airlines}" var="airline">
 			<h:column>
 				<f:facet name="header">Airline</f:facet>
-				<h:outputText value="#{airline.name}" /> 
+				<h:outputText value="#{airline.name}" />
 			</h:column>
 			<h:column>
 
-                <f:facet name="header">Edit</f:facet>
-                <h:commandButton action="#{airlineBeanManager.editAirline(airline.id)}" value="Edit"/>
-            </h:column>
+				<f:facet name="header">Edit</f:facet>
+				<h:commandButton
+					action="#{airlineBeanManager.editAirline(airline.id)}" value="Edit" />
+			</h:column>
 
-            <h:column>
+			<h:column>
 
-                <f:facet name="header">Delete</f:facet>
+				<f:facet name="header">Delete</f:facet>
 
-                <h:commandButton action="#{airlineBeanManager.deleteAirline(airline.id)}" value="Delete"/>
+				<h:commandButton
+					action="#{airlineBeanManager.deleteAirline(airline.id)}"
+					value="Delete" />
 
-            </h:column>
+			</h:column>
 
-			
+
 		</h:dataTable>
+		<mum:homeNav />
 	</h:form>
 </h:body>
 </html>

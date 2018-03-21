@@ -10,12 +10,17 @@
 	<title>Create Airline</title>
 </h:head>
 <h:body>
-<h2>Airline detail</h2>
+	<h2>Airline detail</h2>
 	<h:form>
-		<h:outputLabel for="name">Airline Name:</h:outputLabel>
-		<h:inputText value="#{airlineBeanManager.name}" required="true" requiredMessage="Airline Name is required."/>		
-		<h:commandButton value="Save" action="#{airlineBeanManager.create}"/>
-		<mum:flightTable flights="#{airlineBeanManager.allFlights}" rendered="#{airlineBeanManager.airline != null}"></mum:flightTable>
+		<h:panelGrid columns="2">
+			<h:outputLabel for="name">Airline Name:</h:outputLabel>
+			<h:inputText value="#{airlineBeanManager.name}" required="true"
+				requiredMessage="Airline Name is required." />
+			<h:commandButton value="Save" action="#{airlineBeanManager.create}" />
+			<h:commandButton action="home" value="Cancel" immediate="true" />
+		</h:panelGrid>
+		<mum:flightTable flights="#{airlineBeanManager.allFlights}"
+			rendered="#{airlineBeanManager.airline != null}"></mum:flightTable>
 	</h:form>
 </h:body>
 </html>
