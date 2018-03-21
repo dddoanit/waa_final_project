@@ -16,16 +16,23 @@
 	<div class="container">
 		<h2>Airline detail</h2>
 		<h:form>
-			<h:panelGrid columns="2">
+			<div class="form-group">
 				<h:outputLabel for="name">Airline Name:</h:outputLabel>
-				<h:inputText value="#{airlineBeanManager.name}" required="true"
+				<h:inputText id="name" value="#{airlineBeanManager.name}"
+					required="true" styleClass="form-control"
 					requiredMessage="Airline Name is required." />
-				<h:commandButton value="Save" action="#{airlineBeanManager.create}" />
-				<h:commandButton action="home" value="Cancel" immediate="true" />
-			</h:panelGrid>
+				<h:message for="name"></h:message>
+			</div>
+			<div class="form-group">
+				<h:commandButton value="Save" action="#{airlineBeanManager.create}"
+					styleClass="btn btn-primary" />
+				<h:commandButton action="home" value="Cancel" immediate="true"
+					styleClass="btn btn-secondary" />
+			</div>
 			<mum:flightTable flights="#{airlineBeanManager.allFlights}"
 				rendered="#{airlineBeanManager.airline != null}"></mum:flightTable>
 		</h:form>
+
 	</div>
 
 	<!-- Bootstrap core JavaScript -->
