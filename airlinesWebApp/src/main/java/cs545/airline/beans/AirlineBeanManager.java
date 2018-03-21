@@ -5,8 +5,12 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import cs545.airline.model.Airline;
+import cs545.airline.model.Flight;
 import cs545.airline.service.AirlineService;
+import cs545.airline.service.FlightService;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Named("airlineBeanManager")
@@ -17,6 +21,9 @@ public class AirlineBeanManager implements Serializable {
 
 	@Inject
 	private AirlineService airlineService;
+	
+	@Inject
+	private FlightService flightService;
 
 	private Airline airline;
 
@@ -80,6 +87,13 @@ public class AirlineBeanManager implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public List<Flight> getAllFlights() {
+		if (airline != null) {
+			return flightService.findByAirline(airline);
+		}
+		return new ArrayList<>();
 	}
 
 }
